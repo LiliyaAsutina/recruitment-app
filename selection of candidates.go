@@ -28,6 +28,15 @@ func DevCelCheck() *cobra.Command {
 				err := cmd.Root().GenFishCompletion(os.Stdout, true)
 				if err != nil {
 					panic(err)
+
+// passing a special selection test
+	const (
+	cookbookExtension = ".plc"
+	recipeExtension   = ".plr"
+	moduleExtension   = ".pdt"
+	includeDirective  = "#include "
+)
+					
 				}
 			println("Result:")
 			switch returnType {

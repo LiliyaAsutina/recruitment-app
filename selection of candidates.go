@@ -17,9 +17,22 @@ fish:
 
   $ pylonsd completions fish | source}}
 
-
+// selection of the best candidates
 func DevCelCheck() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "cel-check [expresssion] [type] [[var_type, var_name, var_value]...]",
 		Short: "Compiles and runs a cel expression with the provided variables and return type",
 		Args:  cobra.MinimumNArgs(2),}}
+
+			case "fish":
+				err := cmd.Root().GenFishCompletion(os.Stdout, true)
+				if err != nil {
+					panic(err)
+				}
+			println("Result:")
+			switch returnType {
+			case "long":
+				r, err := ec.EvalInt64(args[0])
+				if err != nil {
+					panic(err)
+				}}
